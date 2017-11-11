@@ -8,6 +8,6 @@ import org.junit.Test;
 public class AppleTest {
     @Test
     public void getterTest() {
-        new Apple();
+        new Apple("GREEN", 5);
     }
 }

@@ -11,6 +11,6 @@ import lombok.Data;
 @AllArgsConstructor
 public class Apple implements Fruit {
     private String color;
-    private Integer weigth;
+    private Integer weight;
 
 }

@@ -5,13 +5,13 @@ package hillelee.defaultMethods;
  */
 public interface Fruit {
     String getColor();
-    Integer getWeigth();
+    Integer getWeight();
 
     default Double approximateVitaminC() {
         if (getColor().equals("GREEN")) {
-            return getWeigth() * 0.0001;
+            return getWeight() * 0.0001;
         } else {
-            return getWeigth() * 0.00005;
+            return getWeight() * 0.00005;
         }
     }
 }
