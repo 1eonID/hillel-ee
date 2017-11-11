@@ -181,4 +181,12 @@ public class AppleSelectorTest {
                 .collect(groupingBy(Apple::getColor, toList()));
         System.out.println(collect.get("RED"));
     }
+
+    @Test
+    public void getAllWorms() throws Exception {
+        apples.stream()
+                .map(Apple::getWorms)
+                .flatMap(List::stream)
+                .forEach(System.out::println);
+    }
 }

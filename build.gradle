@@ -10,11 +10,10 @@ repositories {
 
 dependencies {
     compile 'com.google.guava:guava:22.0'
-
+    compile group: 'org.springframework', name: 'spring-context', version: '4.3.12.RELEASE'
     compileOnly 'org.projectlombok:lombok:1.16.18'
 
     testCompile 'junit:junit:4.12'
-
     testCompile group: 'org.hamcrest', name: 'hamcrest-all', version: '1.3'
 }
 
