@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 public class ProblemSolverTest {
     @Test
     public void solvePuzzle() throws Exception {
-        String result = new ProblemSolver().solve("Correct answer");
+        String result = new ProblemSolver().solve(new Puzzle());
 
         Assert.assertThat(result, Matchers.is("Correct answer"));
     }
@@ -22,6 +22,20 @@ public class ProblemSolverTest {
     @Test
     public void solveDecryption() throws Exception {
         String result = new ProblemSolver().solve(new MessageDectyptor());
+
+        Assert.assertThat(result, Matchers.is("Correct answer"));
+    }
+
+    @Test
+    public void solvePuzzleWithStreams() throws Exception {
+        String result = new ProblemSolver().solveWithStreams(new Puzzle());
+
+        Assert.assertThat(result, Matchers.is("Correct answer"));
+    }
+
+    @Test
+    public void solveDecryptionWithStreams() throws Exception {
+        String result = new ProblemSolver().solveWithStreams(new MessageDectyptor());
 
         Assert.assertThat(result, Matchers.is("Correct answer"));
     }
