@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 public class ProblemSolverTest {
     @Test
     public void solvePuzzle() throws Exception {
-        String result = new ProblemSolver().solve("Correct answer");
+        String result = new ProblemSolver().solve(new Puzzle());
 
         Assert.assertThat(result, Matchers.is("Correct answer"));
     }
