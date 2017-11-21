@@ -11,6 +11,7 @@ import static hillelee.dish.DishType.BEEF;
 import static hillelee.dish.DishType.CHICKEN;
 import static hillelee.dish.DishType.VEGETABLES;
 
+import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toList;
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
@@ -131,10 +132,8 @@ public class DishTest {
         System.out.println("-----------------");
 
         //Using Stream API
-//        Map<DishType, Double> averCalByGroup = menu.stream()
-//                .filter(d -> d.getType().equals(d.getType()))
-//                .mapToInt(Dish::getCalories).average()
-//                .collect(Collectors.groupingBy(Dish::getType, Collectors.toList()));
+        Map<DishType, Double> averCalByGroup = menu.stream()
+                .collect(groupingBy(Dish::getType, Collectors.averagingInt(Dish::getCalories)));
     }
 
     @Test
@@ -148,7 +147,7 @@ public class DishTest {
         //Using Stream API
         Map<DishType, List<Dish>> groupedByBioList = menu.stream()
                 .filter(dish -> dish.getIsBio())
-                .collect(Collectors.groupingBy(Dish::getType, Collectors.toList()));
+                .collect(groupingBy(Dish::getType, Collectors.toList()));
     }
 
 
